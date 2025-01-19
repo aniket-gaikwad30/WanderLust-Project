@@ -1,0 +1,12 @@
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.logo svg{
+    color: #fe424d;
+}
+
+.nav-link{
+    color: #222222;
+}
