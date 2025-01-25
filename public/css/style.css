@@ -106,3 +106,18 @@ body{
     background-color: #fe424d;
     border: none;
 }
+
+.show-image{
+    height: 30vh;
+}
+
+
+.btns{
+    display: flex;
+    align-items: center;
+}
+
+.btns a{
+    width: 4rem;
+    margin-right: 1rem;
+}
