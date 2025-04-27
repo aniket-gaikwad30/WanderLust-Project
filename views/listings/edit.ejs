@@ -1,86 +1,83 @@
 <% layout("/layouts/boilerplate") %>
 
 <div class="row mt-3">
-  <div class="col-8 offset-2 ">
+  <div class="col-8 offset-2">
+    <h3>Edit your Listing</h3>
 
-  
-  <h3>Edit your Listing</h3>
+    <form
+      method="POST"
+      action="/listings/<%= listing._id %>?_method=PUT"
+      novalidate
+      class="needs-validation"
+    >
+      <!-- title  -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          name="listing[title]"
+          value="<%= listing.title %>"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
+      <!-- description  -->
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" value="<%= listing.description %>" name="listing[description]" required>
+        <%= listing.description %></textarea>
+      </div>
 
-  <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
-    <!-- title  -->
-    <div class="mb-3">
-      <label for="title" class="form-label">Title</label>
-      <input
-        name="listing[title]"
-        value="<%= listing.title %>"
-        type="text"
-        class="form-control"
-        required
-      />
-      
-    </div>
-    <!-- description  -->
-    <div class="mb-3">
-      <label for="description" class="form-label">Description</label>
-      <textarea class="form-control" name="Listing[description]" required>
-<%= listing.description %></textarea
-      >
-    </div>
+      <!-- image  -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+        <input
+          name="listing[image]"
+          value="<%= listing.image %>"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="row">
+        <!-- prise  -->
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="listing[price]"
+            value="<%= listing.price %>"
+            type="number"
+            class="form-control"
+            required
+          />
+        </div>
 
-    <!-- image  -->
-    <div class="mb-3">
-      <label for="image" class="form-label">Image Link</label>
-      <input
-        name="listing[image]"
-        value="<%= listing.image %>"
-        type="text"
-        class="form-control"
-        required
-      />
-    </div>
-<div class="row">
+        <!-- country  -->
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input
+            name="listing[country]"
+            value="<%= listing.country %>"
+            type="text"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+      <!-- location  -->
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          name="listing[location]"
+          value="<%= listing.location %>"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
 
-
-    <!-- prise  -->
-    <div class="mb-3 col-md-4">
-      <label for="price" class="form-label">Price</label>
-      <input
-        name="listing[price]"
-        value="<%= listing.price %>"
-        type="number"
-        class="form-control"
-        required
-      />
-    </div>
-
-    <!-- country  -->
-    <div class="mb-3 col-md-8">
-      <label for="country" class="form-label">Country</label>
-      <input
-        name="listing[country]"
-        value="<%= listing.country %>"
-        type="text"
-        class="form-control"
-        required
-      />
-    </div>
-    </div>
-    <!-- location  -->
-    <div class="mb-3">
-      <label for="location" class="form-label">Location</label>
-      <input
-        name="listing[location]"
-        value="<%= listing.location %>"
-        type="text"
-        class="form-control"
-        required
-      />
-    </div>
-
-    <button class="btn btn-dark add-btn">Edit</button>
-    <br><br>
-  </form>
-
-</div>
-
+      <button class="btn btn-dark add-btn">Edit</button>
+      <br /><br />
+    </form>
+  </div>
 </div>
